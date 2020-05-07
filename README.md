@@ -1,4 +1,4 @@
-# isitup-frontend
+# milliseconds - an isitup-frontend
 
 Web-based front-end
 
