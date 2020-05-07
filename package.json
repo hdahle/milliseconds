@@ -1,0 +1,14 @@
+{
+  "name": "isitup",
+  "version": "1.0.0",
+  "description": "Analytics/wheresitup",
+  "main": "index.js",
+  "scripts": {
+    "install": "./install-wsl.sh",
+    "test": "./test.sh"
+  },
+  "keywords": [],
+  "author": "HD",
+  "license": "MIT",
+  "homepage": ""
+}

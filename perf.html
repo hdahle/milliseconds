@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Access times HTTPS GET</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/w3-custom-colors.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,400|Roboto+Condensed&display=swap">
+
+  <style>
+    body,
+    html {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      color: #bbb;
+    }
+
+    h3,
+    h4 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
+      color: #ccc;
+    }
+
+    a {
+      word-wrap: break-word;
+    }
+
+    .fp-my-font {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+    }
+
+    .fp-thin-font,
+    .fp-ppm-font {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      font-size: xx-large;
+    }
+
+    .fp-ppm-font {
+      color: rgb(200, 116, 94);
+    }
+
+    .fa-twitter,
+    .fa-instagram {
+      background: white;
+      color: black;
+      text-decoration: none;
+    }
+
+    .w3-row {
+      padding-bottom: 76px;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+  <script src="js/perf.js"></script>
+</head>
+
+<body class="w3-theme">
+  <div class="w3-top" id="top-menu-bar">
+    <div class="w3-bar w3-theme-d1">
+      <div class="w3-content" style="max-width:920px">
+        <a href="https://futureplanet.eco/#Top" class="w3-bar-item w3-button">futureplanet.eco</a>
+        <a href="https://futureplanet.eco/#About" class="w3-bar-item w3-button w3-hide-small w3-right">About</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+          onclick="clickBurger()">&#9776;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="burger" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-theme-d1 w3-top" style="margin-top:38px">
+    <a href="#About" class="w3-bar-item w3-button" onClick="clickBurger()">About</a>
+  </div>
+
+  <!-- Limit content width to 920px -->
+  <div class="w3-content w3-padding-32" id="Top" style="max-width:920px;">
+
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row" id="plotPerformance">
+      <div class="w3-container">
+        <h2>Website access times</h2>
+        All timings in milliseconds
+      </div>
+      <div class="w3-container">
+        <canvas id="perfChartFP"></canvas>
+      </div>
+      <script>
+        plotIsItUp("perfChartFP", "https://api.futureplanet.eco/futureplanet.eco.z.ts")
+      </script>
+    </div>
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row" id="plotPerformancePexMe">
+      <div class="w3-container">
+        <h2>Website access times</h2>
+        HTTPS GET times in milliseconds
+      </div>
+      <div class="w3-container">
+        <canvas id="perfChartPex"></canvas>
+      </div>
+      <script>
+        plotIsItUp("perfChartPex", "https://api.futureplanet.eco/pexip.me.z.ts")
+      </script>
+    </div>
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row" id="plotPerformanceZoom">
+      <div class="w3-container">
+        <h2>Website access times</h2>
+        HTTPS GET times in milliseconds
+      </div>
+      <div class="w3-container">
+        <canvas id="perfChartZ"></canvas>
+      </div>
+      <script>
+        plotIsItUp("perfChartZ", "https://api.futureplanet.eco/zoom.us.join.z.ts")
+      </script>
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <div class="w3-container w3-center w3-section">
+    design by futureplanet.eco
+  </div>
+
+  <!-- BURGER MENU -->
+
+  <script>
+    function clickBurger() {
+      var x = document.getElementById("burger");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
