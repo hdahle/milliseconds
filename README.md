@@ -11,8 +11,6 @@ Web-based front-end
 
 - googlefonts for Roboto etc
 
-- fontawesome for social media icons, up/down arrows, ...
-
 - api.wheresitup.com for testing
 
 - redis for key/value store and sorted-set/time-series store
