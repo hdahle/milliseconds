@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/w3-custom-colors.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,400|Roboto+Condensed&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap">
 
   <style>
     body,
@@ -21,22 +21,6 @@
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: #ccc;
-    }
-
-    .fp-my-font {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-weight: 700;
-    }
-
-    .fp-thin-font,
-    .fp-ppm-font {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 100;
-      font-size: xx-large;
-    }
-
-    .fp-ppm-font {
-      color: rgb(200, 116, 94);
     }
   </style>
 
@@ -70,21 +54,17 @@
       <div class="w3-container">
         <h2>futureplanet.eco</h2>
       </div>
-      <div class="w3-container w3-hide-small">
-        <canvas id="perfChartFP"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="perfChartFPSmall"></canvas>
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="perfChartFP"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartFPSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("perfChartFP", "perfChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'GET')
       </script>
 
-      <div class="w3-container w3-hide-small">
-        <canvas id="connChartFP"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="connChartFPSmall"></canvas>
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="connChartFP"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartFPSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("connChartFP", "connChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'CONNECT')
@@ -96,20 +76,17 @@
       <div class="w3-container">
         <h2>pexip.me</h2>
       </div>
-      <div class="w3-container w3-hide-small">
-        <canvas id="perfChartPex"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="perfChartPexSmall"></canvas>
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="perfChartPex"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartPexSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("perfChartPex", "perfChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'GET')
       </script>
-      <div class="w3-container w3-hide-small">
-        <canvas id="connChartPex"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="connChartPexSmall"></canvas>
+
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="connChartPex"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartPexSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("connChartPex", "connChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'CONNECT')
@@ -121,20 +98,18 @@
       <div class="w3-container">
         <h2>zoom.us/join</h2>
       </div>
-      <div class="w3-container w3-hide-small">
-        <canvas id="perfChartZ"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="perfChartZSmall"></canvas>
+
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="perfChartZ"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartZSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
       </script>
-      <div class="w3-container w3-hide-small">
-        <canvas id="connChartZ"></canvas>
-      </div>
-      <div class="w3-container w3-hide-large w3-hide-medium">
-        <canvas id="connChartZSmall"></canvas>
+
+      <div class="w3-container">
+        <div><canvas class="w3-hide-small" id="connChartZ"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartZSmall"></canvas></div>
       </div>
       <script>
         plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
@@ -142,11 +117,30 @@
 
     </div>
 
+    <!-- ABOUT -->
+
+    <div class="w3-row w3-padding-24" id="About">
+      <div class="w3-container" style="color:#ccc;">
+        <h2>About</h2>
+        <p>
+          <ul>
+            <li>The tests use the <a href="https://api.wheresitup.com">wheresitup</a> service</li>
+            <li>Every hour, we run a <span class="w3-theme-l1">curl --silent --location --max-redirs 4 --verbose
+                --trace-time</span> from each of the 12 locations
+            </li>
+            <li>For each target URL we display two timings, GET (from before connection is established to close) and
+              CONNECT (from before connection to connected)</li>
+            <li>Have a look at the <a href="https://wheresitup.com/docs/#http">API docs</a> for more info </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <!-- FOOTER -->
 
-  <div class="w3-container w3-center w3-section" id="About">
+  <div class="w3-container w3-center w3-section">
     <p>milliseconds</p>
     <p>by futureplanet.eco</p>
   </div>
