@@ -1,9 +1,9 @@
-# milliseconds - an isitup-frontend
+# milliseconds - a wheresitup-frontend, sort of
 
 Web-based front-end
 
 ### Frameworks, packages etc
-- w3.css framework for reponsive design
+- w3.css framework for responsive design
 
 - charts.js for various charts
 
@@ -13,7 +13,7 @@ Web-based front-end
 
 - fontawesome for social media icons, up/down arrows, ...
 
-- wheresitup.com for testing
+- api.wheresitup.com for testing
 
 - redis for key/value store and sorted-set/time-series store
 
