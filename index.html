@@ -12,13 +12,12 @@
 
   <style>
     body,
-    html {
+    html,
+    h2 {
       font-family: 'Roboto', sans-serif;
     }
 
-    h1,
     h2 {
-      font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: #ccc;
     }
@@ -33,7 +32,7 @@
 <body class="w3-theme">
   <div class="w3-top" id="top-menu-bar">
     <div class="w3-bar w3-theme-d2">
-      <div class="w3-content" style="max-width:920px">
+      <div class="w3-content" style="max-width:1600px">
         <a href="#Top" class="w3-bar-item w3-button">milliseconds</a>
         <a href="#About" class="w3-bar-item w3-button w3-hide-small w3-right">about</a>
         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
@@ -47,75 +46,71 @@
   </div>
 
   <!-- Limit content width to 920px -->
-  <div class="w3-content w3-padding-64" id="Top" style="max-width:920px;">
+  <div class="w3-content w3-padding-64" id="Top" style="max-width:1600px;">
 
     <!-- Plot Performance Chart -->
-    <div class="w3-row w3-padding-24">
-      <div class="w3-container">
-        <h2>futureplanet.eco</h2>
-      </div>
-      <div class="w3-container">
+    <div class="w3-row w3-container w3-padding-24">
+      <h2>futureplanet.eco</h2>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="perfChartFP"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartFPSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("perfChartFP", "perfChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'GET')
-      </script>
-
-      <div class="w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="connChartFP"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="connChartFPSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("connChartFP", "connChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'CONNECT')
-      </script>
     </div>
+    <script>
+      plotIsItUp("perfChartFP", "perfChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'GET')
+      plotIsItUp("connChartFP", "connChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'CONNECT')
+    </script>
+
 
     <!-- Plot Performance Chart -->
-    <div class="w3-row w3-padding-24">
-      <div class="w3-container">
-        <h2>pexip.me</h2>
-      </div>
-      <div class="w3-container">
+    <div class="w3-row w3-container w3-padding-24">
+      <h2>pexip.me</h2>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="perfChartPex"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartPexSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("perfChartPex", "perfChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'GET')
-      </script>
-
-      <div class="w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="connChartPex"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="connChartPexSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("connChartPex", "connChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'CONNECT')
-      </script>
     </div>
 
-    <!-- Plot Performance Chart -->
-    <div class="w3-row w3-padding-24">
-      <div class="w3-container">
-        <h2>zoom.us/join</h2>
-      </div>
+    <script>
+      plotIsItUp("connChartPex", "connChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'CONNECT')
+      plotIsItUp("perfChartPex", "perfChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'GET')
+    </script>
 
-      <div class="w3-container">
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h2>zoom.us/join</h2>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="perfChartZ"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartZSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
-      </script>
-
-      <div class="w3-container">
+      <div class="w3-col m12 l6">
         <div><canvas class="w3-hide-small" id="connChartZ"></canvas></div>
         <div><canvas class="w3-hide-large w3-hide-medium" id="connChartZSmall"></canvas></div>
       </div>
-      <script>
-        plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
-      </script>
-
     </div>
+    <script>
+      plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
+      plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
+    </script>
+
 
     <!-- ABOUT -->
 
