@@ -16,11 +16,13 @@
   <style>
     body,
     html,
-    h2 {
+    h2,
+    h3 {
       font-family: 'Roboto', sans-serif;
     }
 
-    h2 {
+    h2,
+    h3 {
       font-weight: 100;
       color: #ccc;
     }
@@ -53,7 +55,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h2>https://futureplanet.eco</h2>
+      <h3>https://futureplanet.eco (Lightsail/AWS t2.tiny)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -73,7 +75,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h2>https://hdahle.github.io/dashboard-frontend/</h2>
+      <h3>https://hdahle.github.io/dashboard-frontend/ (Github Pages)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -91,9 +93,51 @@
       plotIsItUp("connChartFP2", "connChartFP2Small", "https://api.futureplanet.eco/hdahle.github.io.dashboard-frontend.z.ts", 'CONNECT')
     </script>
 
+
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h2>pexip.me</h2>
+      <h3>https://dev.my.hu.ma/login/ (Heroku)</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartHu2"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartHu2Small"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartHu2"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartHu2Small"></canvas></div>
+      </div>
+    </div>
+    <script>
+      plotIsItUp("perfChartHu2", "perfChartHu2Small", "https://api.futureplanet.eco/dev.my.hu.ma.login.z.ts", 'GET')
+      plotIsItUp("connChartHu2", "connChartHu2Small", "https://api.futureplanet.eco/dev.my.hu.ma.login.z.ts", 'CONNECT')
+    </script>
+
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>https://novotech.no</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartNovo"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartNovoSmall"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartNovo"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartNovoSmall"></canvas></div>
+      </div>
+    </div>
+    <script>
+      plotIsItUp("perfChartNovo", "perfChartNovoSmall", "https://api.futureplanet.eco/novotech.no.z.ts", 'GET')
+      plotIsItUp("connChartNovo", "connChartNovoSmall", "https://api.futureplanet.eco/novotech.no.z.ts", 'CONNECT')
+    </script>
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>pexip.me</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -115,7 +159,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h2>zoom.us/join</h2>
+      <h3>zoom.us/join</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -138,7 +182,7 @@
 
     <div class="w3-row w3-padding-24" id="About">
       <div class="w3-container" style="color:#ccc;">
-        <h2>About</h2>
+        <h3>About</h3>
         <p>
         <ul>
           <li>The tests use the <a href="https://api.wheresitup.com">wheresitup</a> service</li>
