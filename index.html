@@ -27,6 +27,10 @@
       color: #ccc;
     }
 
+    .ms-footer-color {
+      color: #ccc;
+    }
+
     .ms-wide {
       letter-spacing: 2px;
     }
@@ -57,9 +61,9 @@
   <!-- Limit content width to 920px -->
   <div class="w3-content w3-padding-64" id="Top" style="max-width:1600px;">
 
-    <!-- Plot Performance Chart -->
+    <!-- Plot Performance Chart Lightsail AMW t2.tiny -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>https://futureplanet.eco (Lightsail/AWS t2.tiny)</h3>
+      <h3>https://futureplanet.eco (Lightsail 1CPU/512KB Frankfurt ~ AWS t2.tiny)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -75,6 +79,26 @@
     <script>
       plotIsItUp("perfChartFP", "perfChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'GET')
       plotIsItUp("connChartFP", "connChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'CONNECT')
+    </script>
+
+    <!-- Plot Performance Chart Lightsail 2CPU-->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>https://futureplanet.eco (Lightsail 2CPU/4GB Frankfurt ~ AWS t2.medium)</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartFPBig"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartFPBigSmall"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartFPBig"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartFPBigSmall"></canvas></div>
+      </div>
+    </div>
+    <script>
+      plotIsItUp("perfChartFPBig", "perfChartFPBigSmall", "https://api.futureplanet.eco/big.futureplanet.eco.z.ts", 'GET')
+      plotIsItUp("connChartFPBig", "connChartFPBigSmall", "https://api.futureplanet.eco/big.futureplanet.eco.z.ts", 'CONNECT')
     </script>
 
     <!-- Plot Performance Chart -->
@@ -121,7 +145,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>https://novotech.no</h3>
+      <h3>https://novotech.no (Azure)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -141,7 +165,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>pexip.me</h3>
+      <h3>https://pexip.me (MNS Oslo)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -163,9 +187,9 @@
 
     <!-- Plot Performance Chart -->
 
-    <!-- 
+
     <div class="w3-row w3-container w3-padding-24">
-      <h3>zoom.us/join</h3>
+      <h3>https://zoom.us/join</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -182,18 +206,17 @@
       plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
       plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
     </script>
--->
 
     <!-- ABOUT -->
 
-    <div class="w3-row w3-padding-24" id="About">
+    <div class="w3-row w3-padding-32" id="About">
       <div class="w3-container" style="color:#ccc;">
         <h3>About</h3>
         <p>
         <ul>
           <li>The tests use the <a href="https://api.wheresitup.com">wheresitup</a> service</li>
-          <li>Every hour, we run a <span class="w3-theme-l1">curl --silent --location --max-redirs 4 --verbose
-              --trace-time</span> from each of the 12 locations
+          <li>Every hour, we run a <code class="w3-theme-l1">&nbsp;curl --silent --location --max-redirs 4 --verbose
+              --trace-time&nbsp;</code> from each of the 12 locations
           </li>
           <li>For each target URL we display two timings, GET (from before connection is established to close) and
             CONNECT (from before connection to connected)</li>
@@ -207,9 +230,9 @@
 
   <!-- FOOTER -->
 
-  <div class="w3-container w3-center w3-section">
-    <p>milliseconds</p>
-    <p>by futureplanet.eco</p>
+  <div class="w3-container w3-padding-32 w3-center w3-small ms-footer-color">
+    <p class="ms-wide">milliseconds</p>
+    <p>by hamachi.no</p>
   </div>
 
   <!-- BURGER MENU -->
