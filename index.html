@@ -63,7 +63,7 @@
 
     <!-- Plot Performance Chart Lightsail AMW t2.tiny -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>https://futureplanet.eco (Lightsail 1CPU/512KB Frankfurt ~ AWS t2.tiny)</h3>
+      <h3>https://futureplanet.eco (Lightsail 1CPU/512MB Frankfurt ~ AWS t2.tiny)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -184,6 +184,26 @@
       plotIsItUp("perfChartPex", "perfChartPexSmall", "https://api.futureplanet.eco/pexip.me.z.ts", 'GET')
     </script>
 
+    <!-- Plot Performance Prepp -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>https://app.prepp.io (Heroku)</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartPrepp"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartPreppSmall"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartPrepp"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartPreppSmall"></canvas></div>
+      </div>
+    </div>
+
+    <script>
+      plotIsItUp("connChartPrepp", "connChartPreppSmall", "https://api.futureplanet.eco/app.prepp.io.z.ts", 'CONNECT')
+      plotIsItUp("perfChartPrepp", "perfChartPreppSmall", "https://api.futureplanet.eco/app.prepp.io.z.ts", 'GET')
+    </script>
 
     <!-- Plot Performance Chart -->
 
