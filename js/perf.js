@@ -70,7 +70,8 @@ function json(response) {
 // Performance
 //
 function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
-  let myChart = [makeMultiLineChart(elmt, false), makeMultiLineChart(elmtSmall, true)];
+  let maxY = testType === 'GET' ? 10000 : 1000;
+  let myChart = [makeMultiLineChart(elmt, false, maxY), makeMultiLineChart(elmtSmall, true, maxY)];
   fetch(url)
     .then(status)
     .then(json)
@@ -91,6 +92,8 @@ function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
           showLine: true,
           label: d.loc
         };
+
+        dataset.data = dataset.data.filter(x => moment(x.t).isAfter(moment().add('d', -10).format()))
         // JSON.parse(JSON.stringify(object)) makes a copy of the dataset
         // This should work for objects that do not contain functions
         // We need to have a separate copy of dataset for small and large displays
@@ -123,7 +126,7 @@ const shortCityName = {
   london: 'LON'
 };
 
-function makeMultiLineChart(canvas, small) {
+function makeMultiLineChart(canvas, small, maxy) {
   return new Chart(document.getElementById(canvas), {
     type: 'line',
     options: {
@@ -142,6 +145,7 @@ function makeMultiLineChart(canvas, small) {
           },
           ticks: {
             fontColor: '#888',
+            max: maxy
             //callback: v => v ? v + 'ms' : v
           },
         }],
@@ -151,9 +155,10 @@ function makeMultiLineChart(canvas, small) {
           },
           type: 'time',
           time: {
-            unit: 'hour',
+            unit: 'day',
             displayFormats: {
-              hour: 'dd HH'
+              hour: 'dd HH',
+              day: 'ddd DD'
             }
           },
           ticks: {

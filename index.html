@@ -61,9 +61,9 @@
   <!-- Limit content width to 920px -->
   <div class="w3-content w3-padding-64" id="Top" style="max-width:1600px;">
 
-    <!-- Plot Performance Chart Lightsail AMW t2.tiny -->
+    <!-- Plot Performance Chart Apache on Lightsail AMW t2.tiny -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>https://futureplanet.eco (Lightsail 1CPU/512MB Frankfurt ~ AWS t2.tiny)</h3>
+      <h3>https://futureplanet.eco (Apache + Lightsail 1CPU/512MB Frankfurt ~ AWS t2.tiny)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -79,6 +79,26 @@
     <script>
       plotIsItUp("perfChartFP", "perfChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'GET')
       plotIsItUp("connChartFP", "connChartFPSmall", "https://api.futureplanet.eco/futureplanet.eco.z.ts", 'CONNECT')
+    </script>
+
+    <!-- Plot Performance Chart Apache on Lightsail AMW t2.tiny -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>https://api.futureplanet.eco (Nodejs + Lightsail 1CPU/512MB Frankfurt ~ AWS t2.tiny)</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartNode"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartNodeSmall"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartNode"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartNodeSmall"></canvas></div>
+      </div>
+    </div>
+    <script>
+      plotIsItUp("perfChartNode", "perfChartNodeSmall", "https://api.futureplanet.eco/api.futureplanet.z.ts", 'GET')
+      plotIsItUp("connChartNode", "connChartNodeSmall", "https://api.futureplanet.eco/api.futureplanet.z.ts", 'CONNECT')
     </script>
 
     <!-- Plot Performance Chart Lightsail 2CPU-->
@@ -207,7 +227,7 @@
 
     <!-- Plot Performance Chart -->
 
-
+    <!-- 
     <div class="w3-row w3-container w3-padding-24">
       <h3>https://zoom.us/join</h3>
     </div>
@@ -226,7 +246,7 @@
       plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
       plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
     </script>
-
+-->
     <!-- ABOUT -->
 
     <div class="w3-row w3-padding-32" id="About">
