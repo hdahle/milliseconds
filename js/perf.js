@@ -97,7 +97,7 @@ function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
           label: d.loc
         };
 
-        dataset.data = dataset.data.filter(x => moment(x.t).isAfter(moment().add('d', -10).format()))
+        dataset.data = dataset.data.filter(x => moment(x.t).isAfter(moment().add('d', -14).format()))
         // JSON.parse(JSON.stringify(object)) makes a copy of the dataset
         // This should work for objects that do not contain functions
         // We need to have a separate copy of dataset for small and large displays
