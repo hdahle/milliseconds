@@ -70,7 +70,8 @@ function json(response) {
 // Performance
 //
 function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
-  let maxY = testType === 'GET' ? 10000 : 1000;
+  const ignoreCities = ['bogota', 'bangkok'];
+  let maxY = testType === 'GET' ? 5000 : 500;
   let myChart = [makeMultiLineChart(elmt, false, maxY), makeMultiLineChart(elmtSmall, true, maxY)];
   fetch(url)
     .then(status)
@@ -78,9 +79,12 @@ function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
     .then(results => {
       console.log('results:', results);
       let colors = mkColorArray(results.data.length);
+      //let bgColors = colorArrayToAlpha(colors, 0.025);
       while (results.data.length) {
         let d = results.data.pop();
         let col = colors.pop();
+        //let bgCol = bgColors.pop();
+        if (ignoreCities.includes(d.loc)) continue;
         let dataset = {
           data: d.data.map(x => {
             if (testType === 'GET') return { t: x.time, y: x.transfer };
