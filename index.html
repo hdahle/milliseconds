@@ -165,7 +165,7 @@
 
     <!-- Plot Performance Chart -->
     <div class="w3-row w3-container w3-padding-24">
-      <h3>https://novotech.no (Azure)</h3>
+      <h3>https://novotech.no (WP/Azure)</h3>
     </div>
 
     <div class="w3-row w3-container">
@@ -181,6 +181,26 @@
     <script>
       plotIsItUp("perfChartNovo", "perfChartNovoSmall", "https://api.futureplanet.eco/novotech.no.z.ts", 'GET')
       plotIsItUp("connChartNovo", "connChartNovoSmall", "https://api.futureplanet.eco/novotech.no.z.ts", 'CONNECT')
+    </script>
+
+    <!-- Plot Performance Chart -->
+    <div class="w3-row w3-container w3-padding-24">
+      <h3>https://novorender.com (Azure)</h3>
+    </div>
+
+    <div class="w3-row w3-container">
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="perfChartNovorender"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="perfChartNovorenderSmall"></canvas></div>
+      </div>
+      <div class="w3-col m12 l6">
+        <div><canvas class="w3-hide-small" id="connChartNovorender"></canvas></div>
+        <div><canvas class="w3-hide-large w3-hide-medium" id="connChartNovorenderSmall"></canvas></div>
+      </div>
+    </div>
+    <script>
+      plotIsItUp("perfChartNovorender", "perfChartNovorenderSmall", "https://api.futureplanet.eco/novorender.com.z.ts", 'GET')
+      plotIsItUp("connChartNovorender", "connChartNovorenderSmall", "https://api.futureplanet.eco/novorender.com.z.ts", 'CONNECT')
     </script>
 
     <!-- Plot Performance Chart -->
@@ -205,7 +225,7 @@
     </script>
 
     <!-- Plot Performance Prepp -->
-    <!-- 
+
     <div class="w3-row w3-container w3-padding-24">
       <h3>https://app.prepp.io (Heroku)</h3>
     </div>
@@ -225,10 +245,9 @@
       plotIsItUp("connChartPrepp", "connChartPreppSmall", "https://api.futureplanet.eco/app.prepp.io.z.ts", 'CONNECT')
       plotIsItUp("perfChartPrepp", "perfChartPreppSmall", "https://api.futureplanet.eco/app.prepp.io.z.ts", 'GET')
     </script>
--->
 
     <!-- Plot Performance Chart -->
-
+    <!-- 
     <div class="w3-row w3-container w3-padding-24">
       <h3>https://zoom.us/join</h3>
     </div>
@@ -247,6 +266,7 @@
       plotIsItUp("perfChartZ", "perfChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'GET')
       plotIsItUp("connChartZ", "connChartZSmall", "https://api.futureplanet.eco/zoom.us.join.z.ts", 'CONNECT')
     </script>
+    -->
     <!-- ABOUT -->
 
     <div class="w3-row w3-padding-32" id="About">
