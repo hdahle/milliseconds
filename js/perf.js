@@ -77,6 +77,7 @@ function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
     .then(status)
     .then(json)
     .then(results => {
+      if (!results) return;
       console.log('results:', results);
       let colors = mkColorArray(results.data.length);
       //let bgColors = colorArrayToAlpha(colors, 0.025);
@@ -112,7 +113,9 @@ function plotIsItUp(elmt, elmtSmall, url, testType = 'GET') {
       myChart.forEach(ch => ch.options.title.text = `${testType} in milliseconds`);
       myChart.forEach(ch => ch.update());
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log('No data from', url)
+    })
 }
 
 const shortCityName = {
